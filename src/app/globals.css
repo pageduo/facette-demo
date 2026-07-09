@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #0b0a08;
+  --color-void: #050505;
+  --color-graphite: #171310;
+  --color-graphite-light: #241e17;
+  --color-paper: #f6f1e7;
+  --color-cream: #efe7d6;
+  --color-stone: #8f8676;
+
+  --color-accent: #7c5cff;
+  --color-accent-soft: #b9a8ff;
+  --color-accent-dark: #4a35c4;
+
+  /* Wird per JS auf --live-accent gesetzt (Hover auf Arbeiten-Karten) und von
+     Verlaufsflächen, Cursor, Fortschrittsanzeige etc. referenziert. */
+  --live-accent: var(--color-accent);
+  --live-accent-soft: var(--color-accent-soft);
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-void: var(--color-void);
+  --color-graphite: var(--color-graphite);
+  --color-graphite-light: var(--color-graphite-light);
+  --color-paper: var(--color-paper);
+  --color-cream: var(--color-cream);
+  --color-stone: var(--color-stone);
+  --color-accent: var(--color-accent);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-accent-dark: var(--color-accent-dark);
+
+  --font-display: var(--font-fraunces);
+  --font-label: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body), system-ui, sans-serif;
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 460;
+}
+
+.font-display-italic {
+  font-family: var(--font-display), Georgia, serif;
+  font-style: italic;
+  font-weight: 460;
+}
+
+.font-label {
+  font-family: var(--font-label), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--live-accent);
+  color: var(--color-ink);
+}
+
+.eyebrow {
+  font-family: var(--font-label), system-ui, sans-serif;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.text-live-accent {
+  color: var(--live-accent);
+}
+
+.bg-live-accent {
+  background-color: var(--live-accent);
+}
+
+.border-live-accent {
+  border-color: var(--live-accent);
+}
+
+/* ---------- Marquee ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 26s linear infinite;
+}
+
+/* ---------- Floating ambient blobs ---------- */
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(4%, -6%) scale(1.08); }
+  66% { transform: translate(-5%, 4%) scale(0.95); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-6%, 5%) scale(1.1); }
+}
+
+.animate-float-a {
+  animation: float-a 18s ease-in-out infinite;
+}
+
+.animate-float-b {
+  animation: float-b 22s ease-in-out infinite;
+}
+
+/* ---------- Grain overlay ---------- */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- Animated underline ---------- */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-graphite-light);
+  border-radius: 999px;
+}
