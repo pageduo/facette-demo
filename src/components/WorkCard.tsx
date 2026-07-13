@@ -21,7 +21,7 @@ export default function WorkCard({ item, index, total }: { item: WorkItem; index
     >
       <Image
         src={img.work[item.slug]}
-        alt={`${item.brand} — ${item.category}`}
+        alt={`${item.brand}, ${item.category}`}
         fill
         sizes="(max-width: 640px) 82vw, (max-width: 1024px) 56vw, 38vw"
         className="object-cover grayscale transition-all duration-700 ease-out group-hover:scale-105 group-hover:grayscale-0 group-focus-visible:scale-105 group-focus-visible:grayscale-0"

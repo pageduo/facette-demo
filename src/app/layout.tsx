@@ -20,7 +20,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const title = "FACETTE — Studio für Markendesign & Brand Identity | Demo-Website";
+const title = "FACETTE: Studio für Markendesign & Brand Identity | Demo-Website";
 const description =
   "Demo-Website für ein Berliner Markendesign-Studio: Identität, Verpackung, digitale Bühnen und Räume für Marken mit vielen Facetten. Diese Seite ist eine Agentur-Demo und kein echtes Unternehmen.";
 

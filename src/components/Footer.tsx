@@ -75,7 +75,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-3 pt-6 text-xs text-paper/40 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} {company.fullName}.</p>
-          <p>Demo-Vorlage für ein Akquise-Gespräch — kein echtes Unternehmen.</p>
+          <p>Demo-Vorlage für ein Akquise-Gespräch, kein echtes Unternehmen.</p>
         </div>
       </div>
     </footer>

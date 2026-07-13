@@ -4,7 +4,7 @@ import ResetConsentButton from "@/components/ResetConsentButton";
 import { company } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: `Datenschutzerklärung (Platzhalter) — ${company.name} Demo`,
+  title: `Datenschutzerklärung (Platzhalter) | ${company.name} Demo`,
 };
 
 export default function DatenschutzPage() {
@@ -18,7 +18,7 @@ export default function DatenschutzPage() {
               <h2 className="font-display mb-3 text-xl text-ink">1. Verantwortlicher</h2>
               <p>
                 {company.fullName} (fiktiv), {company.address.street}, {company.address.zip}{" "}
-                {company.address.city} — E-Mail: {company.email}. Diese Angaben sind Platzhalter
+                {company.address.city}. E-Mail: {company.email}. Diese Angaben sind Platzhalter
                 für eine Demo-Website und beziehen sich auf kein reales Unternehmen.
               </p>
             </section>
@@ -79,7 +79,7 @@ export default function DatenschutzPage() {
             <section>
               <h2 className="font-display mb-3 text-xl text-ink">7. Kontaktformular</h2>
               <p>
-                Das Kontaktformular auf dieser Demo-Website versendet keine echten Daten — es ist
+                Das Kontaktformular auf dieser Demo-Website versendet keine echten Daten. Es ist
                 rein zu Demonstrationszwecken funktionsfähig gestaltet. In einer echten Umsetzung
                 würden hier eingegebene Daten (Name, E-Mail, Nachricht) ausschließlich zur
                 Bearbeitung Ihrer Anfrage verarbeitet und nach Erledigung gelöscht.

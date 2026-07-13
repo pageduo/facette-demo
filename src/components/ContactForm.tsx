@@ -68,7 +68,7 @@ export default function ContactForm() {
         Nachricht senden
       </button>
       <p className="text-[11px] text-paper/40">
-        Demo-Formular ohne echten Versand — es werden keine Daten übertragen oder gespeichert.
+        Demo-Formular ohne echten Versand. Es werden keine Daten übertragen oder gespeichert.
       </p>
     </form>
   );

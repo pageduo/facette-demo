@@ -24,7 +24,7 @@ export default function ServicesBento() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-display mt-4 max-w-2xl text-4xl text-paper sm:text-5xl">
-            Alles, was eine Marke <span className="font-display-italic">braucht</span> — und ein
+            Alles, was eine Marke <span className="font-display-italic">braucht</span>, und ein
             paar Dinge, die sie überrascht.
           </h2>
         </Reveal>

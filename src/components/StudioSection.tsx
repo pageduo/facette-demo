@@ -21,13 +21,13 @@ export default function StudioSection() {
           <Reveal delay={0.2}>
             <div className="flex flex-col gap-4 text-sm leading-relaxed text-paper/60">
               <p>
-                {company.name} wurde {company.founded} in {company.city} gegründet — seither
+                {company.name} wurde {company.founded} in {company.city} gegründet. Seither
                 begleiten wir Marken über Sektorgrenzen hinweg: von der Bio-Bäckerei bis zum
                 E-Mobility-Startup.
               </p>
               <p>
                 Wir glauben nicht an das eine perfekte Logo. Wir glauben an Systeme, die sich
-                anpassen können, ohne beliebig zu werden — Facette für Facette.
+                anpassen können, ohne beliebig zu werden: Facette für Facette.
               </p>
             </div>
           </Reveal>

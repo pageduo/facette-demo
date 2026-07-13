@@ -44,13 +44,13 @@ export default function WorkSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="font-display mt-4 max-w-2xl text-4xl text-paper sm:text-5xl">
-              Sechs Marken, sechs Farben —{" "}
+              Sechs Marken, sechs Farben,{" "}
               <span className="font-display-italic text-live-accent">ein Studio.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-4 max-w-lg text-sm text-paper/50">
-              Bewege den Cursor über ein Projekt — die Seite nimmt die Farbe der Marke an.
+              Bewege den Cursor über ein Projekt, die Seite nimmt die Farbe der Marke an.
             </p>
           </Reveal>
         </div>

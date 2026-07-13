@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { company } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: `Anmeldung — ${company.fullName} (Demo)`,
+  title: `Anmeldung: ${company.fullName} (Demo)`,
   robots: { index: false, follow: false },
 };
 

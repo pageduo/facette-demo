@@ -1,14 +1,14 @@
 export const company = {
   name: "FACETTE",
-  fullName: "FACETTE — Studio für Markendesign & Brand Identity",
+  fullName: "FACETTE: Studio für Markendesign & Brand Identity",
   founded: 2017,
   city: "Berlin",
   claim: "Jede Marke hat viele Seiten.",
   claimSecondLine: "Wir gestalten sie alle.",
   subline:
-    "Ein Berliner Studio für Markenidentität, Verpackung und digitale Bühnen — für Unternehmen, die mehr sein wollen als ein Logo.",
+    "Ein Berliner Studio für Markenidentität, Verpackung und digitale Bühnen, für Unternehmen, die mehr sein wollen als ein Logo.",
   usp:
-    "Keine Marke ist eindimensional. Wir gestalten jede Facette einzeln — Identität, Sprache, Verpackung, Raum, Bewegung — und halten sie im Wandel trotzdem zusammen.",
+    "Keine Marke ist eindimensional. Wir gestalten jede Facette einzeln (Identität, Sprache, Verpackung, Raum, Bewegung) und halten sie im Wandel trotzdem zusammen.",
   phone: "+49 30 555 214 70",
   phoneHref: "tel:+493055521470",
   email: "hallo@facette-demo.de",
@@ -79,7 +79,7 @@ export const work: WorkItem[] = [
     category: "Kultur & Musik · Identität & Bewegtbild",
     year: "2024",
     description:
-      "Ein visuelles System, das sich im Takt bewegt — für einen Streaming-Sender zwischen Club und Feuilleton.",
+      "Ein visuelles System, das sich im Takt bewegt, für einen Streaming-Sender zwischen Club und Feuilleton.",
     color: "#FF3D7F",
     colorSoft: "#ff8fb4",
   },
@@ -99,7 +99,7 @@ export const work: WorkItem[] = [
     category: "Beauty · Verpackung & Retail",
     year: "2023",
     description:
-      "Reduzierte Formen, ein Hauch Lila — Verpackungsdesign, das im Regal flüstert statt schreit.",
+      "Reduzierte Formen, ein Hauch Lila: Verpackungsdesign, das im Regal flüstert statt schreit.",
     color: "#C79AFF",
     colorSoft: "#e3d0ff",
   },
@@ -109,7 +109,7 @@ export const work: WorkItem[] = [
     category: "Gastronomie · Identität & Signage",
     year: "2024",
     description:
-      "Terrakotta, Handschrift und Fernweh — eine Restaurantmarke mit Hafenluft für Innenstadtlage.",
+      "Terrakotta, Handschrift und Fernweh: eine Restaurantmarke mit Hafenluft für Innenstadtlage.",
     color: "#D4592B",
     colorSoft: "#f0a37e",
   },
@@ -119,7 +119,7 @@ export const work: WorkItem[] = [
     category: "Urban Gardening · Markenidentität",
     year: "2022",
     description:
-      "Ein Grün, das wächst statt greenwasht — Identität für ein Netzwerk urbaner Gemeinschaftsgärten.",
+      "Ein Grün, das wächst statt greenwasht: Identität für ein Netzwerk urbaner Gemeinschaftsgärten.",
     color: "#5FBE71",
     colorSoft: "#a6e0b1",
   },
@@ -130,7 +130,7 @@ export const services = [
     key: "strategie",
     title: "Markenstrategie",
     description:
-      "Positionierung, Naming und Markenkern — die Fragen, die vor jedem Formensuchen beantwortet sein müssen.",
+      "Positionierung, Naming und Markenkern: die Fragen, die vor jedem Formensuchen beantwortet sein müssen.",
     size: "lg",
   },
   {
@@ -170,7 +170,7 @@ export const process = [
     number: "01",
     title: "Entdecken",
     description:
-      "Workshops, Wettbewerbsanalyse und viele unbequeme Fragen — bis der eigentliche Markenkern sichtbar wird.",
+      "Workshops, Wettbewerbsanalyse und viele unbequeme Fragen, bis der eigentliche Markenkern sichtbar wird.",
   },
   {
     number: "02",
@@ -188,7 +188,7 @@ export const process = [
     number: "04",
     title: "Ausrollen",
     description:
-      "Guidelines, Vorlagen und Rollout über alle Touchpoints — vom Briefpapier bis zur Ladenfront.",
+      "Guidelines, Vorlagen und Rollout über alle Touchpoints, vom Briefpapier bis zur Ladenfront.",
   },
   {
     number: "05",
@@ -201,7 +201,7 @@ export const process = [
 export const testimonials = [
   {
     quote:
-      "FACETTE hat aus einem vagen Bauchgefühl eine Marke gemacht, die wir sofort wiedererkennen — und unsere Kund:innen auch.",
+      "FACETTE hat aus einem vagen Bauchgefühl eine Marke gemacht, die wir sofort wiedererkennen, und unsere Kund:innen auch.",
     author: "Mareike Sondermann",
     role: "Gründerin, Nordkorn",
   },
@@ -222,17 +222,17 @@ export const faq = [
   {
     question: "Wie läuft ein Projekt bei euch ab?",
     answer:
-      "In fünf Phasen von Entdecken bis Weiterdenken — siehe unser Prozess weiter oben. Am Anfang steht immer ein unverbindliches Kennenlerngespräch.",
+      "In fünf Phasen von Entdecken bis Weiterdenken, siehe unser Prozess weiter oben. Am Anfang steht immer ein unverbindliches Kennenlerngespräch.",
   },
   {
     question: "Arbeitet ihr auch mit Startups oder kleineren Marken?",
     answer:
-      "Ja. Neben etablierten Unternehmen begleiten wir bewusst auch junge Marken früh — oft entstehen daraus die mutigsten Projekte.",
+      "Ja. Neben etablierten Unternehmen begleiten wir bewusst auch junge Marken früh, oft entstehen daraus die mutigsten Projekte.",
   },
   {
     question: "Was kostet ein Rebranding bei FACETTE?",
     answer:
-      "Das hängt vom Umfang ab — von der reinen Identität bis zum vollständigen System inklusive Verpackung und Raum. Nach dem Erstgespräch erhalten Sie ein individuelles Angebot.",
+      "Das hängt vom Umfang ab, von der reinen Identität bis zum vollständigen System inklusive Verpackung und Raum. Nach dem Erstgespräch erhalten Sie ein individuelles Angebot.",
   },
   {
     question: "Wie lange dauert ein typisches Projekt?",

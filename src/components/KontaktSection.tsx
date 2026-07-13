@@ -15,7 +15,7 @@ export default function KontaktSection() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="font-display mt-4 max-w-2xl text-4xl text-ink sm:text-5xl">
-            {company.name} — seit {company.founded} in {company.city}.
+            {company.name}, seit {company.founded} in {company.city}.
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
