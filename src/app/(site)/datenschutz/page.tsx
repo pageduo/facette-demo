@@ -11,11 +11,11 @@ export default function DatenschutzPage() {
   return (
     <>
       <LegalHero eyebrow="// Rechtliches" title="Datenschutzerklärung" />
-      <div className="bg-paper">
-        <div className="mx-auto max-w-3xl px-5 py-16 sm:px-8">
-          <div className="flex flex-col gap-10 text-sm leading-relaxed text-ink/60">
+      <div className="bg-walnut-shadow px-[var(--gutter)]">
+        <div className="mx-auto max-w-3xl py-[8vh]">
+          <div className="flex flex-col gap-10 t-prose text-warm-cream/70">
             <section>
-              <h2 className="font-display mb-3 text-xl text-ink">1. Verantwortlicher</h2>
+              <h2 className="t-heading-sm mb-4 text-warm-cream">1. Verantwortlicher</h2>
               <p>
                 {company.fullName} (fiktiv), {company.address.street}, {company.address.zip}{" "}
                 {company.address.city}. E-Mail: {company.email}. Diese Angaben sind Platzhalter
@@ -24,7 +24,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="font-display mb-3 text-xl text-ink">2. Hosting & Server-Logfiles</h2>
+              <h2 className="t-heading-sm mb-4 text-warm-cream">2. Hosting & Server-Logfiles</h2>
               <p>
                 Diese Demo wird auf einer Vercel-Subdomain gehostet. Beim Aufruf der Seite werden
                 technisch notwendige Zugriffsdaten (u. a. IP-Adresse, Datum, aufgerufene Seite)
@@ -33,7 +33,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="font-display mb-3 text-xl text-ink">3. Zugangsschutz per Google-Anmeldung</h2>
+              <h2 className="t-heading-sm mb-4 text-warm-cream">3. Zugangsschutz per Google-Anmeldung</h2>
               <p>
                 Diese Demo ist nicht öffentlich zugänglich. Der Zugriff erfolgt über eine Anmeldung
                 mit einem freigeschalteten Google-Konto. Dabei wird von Google Ihre E-Mail-Adresse
@@ -44,40 +44,37 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="font-display mb-3 text-xl text-ink">4. Schriftarten</h2>
+              <h2 className="t-heading-sm mb-4 text-warm-cream">4. Schriftarten</h2>
               <p>
-                Die verwendeten Schriftarten (Fraunces, Space Grotesk, Inter) werden über{" "}
+                Die verwendete Schriftart (Inter) wird über{" "}
                 <code>next/font</code> lokal ausgeliefert. Es findet keine Verbindung zu
                 Google-Servern statt, es werden keine Daten an Google übertragen.
               </p>
             </section>
 
             <section id="cookies">
-              <h2 className="font-display mb-3 text-xl text-ink">5. Cookies & Einwilligung</h2>
+              <h2 className="t-heading-sm mb-4 text-warm-cream">5. Cookies & Einwilligung</h2>
               <p>
                 Diese Website verwendet ausschließlich technisch notwendige Cookies (u. a. für die
                 Anmeldung) sowie einen lokalen Speichereintrag (Local Storage), um Ihre
-                Cookie-Auswahl zu merken. Für die Einbindung der Google-Maps-Karte im Bereich
-                „Kontakt“ fragen wir vor dem Laden separat Ihre Zustimmung ab, da hierbei Ihre
-                IP-Adresse an Google übertragen wird.
+                Cookie-Auswahl zu merken. Analyse- oder Marketing-Cookies werden nicht gesetzt.
               </p>
               <div className="mt-4">
-                <ResetConsentButton className="rounded-full border border-ink/20 px-5 py-2.5 text-sm font-medium text-ink transition hover:bg-cream" />
+                <ResetConsentButton className="btn-ghost" />
               </div>
             </section>
 
             <section>
-              <h2 className="font-display mb-3 text-xl text-ink">6. Google Maps</h2>
+              <h2 className="t-heading-sm mb-4 text-warm-cream">6. Externe Inhalte</h2>
               <p>
-                Nach Ihrer Zustimmung wird eine Karte des Anbieters Google Ireland Limited
-                eingebunden. Dabei kann Google Daten wie Ihre IP-Adresse verarbeiten und ggf. in
-                die USA übertragen. Weitere Informationen finden Sie in der Datenschutzerklärung
-                von Google.
+                Diese Demo bindet keine Karten, Videos oder sonstigen Inhalte Dritter ein. Die
+                Projektbilder werden über ein Bild-CDN ausgeliefert; dabei wird Ihre IP-Adresse
+                technisch bedingt an den Bildanbieter übertragen.
               </p>
             </section>
 
             <section>
-              <h2 className="font-display mb-3 text-xl text-ink">7. Kontaktformular</h2>
+              <h2 className="t-heading-sm mb-4 text-warm-cream">7. Kontaktformular</h2>
               <p>
                 Das Kontaktformular auf dieser Demo-Website versendet keine echten Daten. Es ist
                 rein zu Demonstrationszwecken funktionsfähig gestaltet. In einer echten Umsetzung
@@ -87,7 +84,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="font-display mb-3 text-xl text-ink">8. Ihre Rechte</h2>
+              <h2 className="t-heading-sm mb-4 text-warm-cream">8. Ihre Rechte</h2>
               <p>
                 Ihnen stehen die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der
                 Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer

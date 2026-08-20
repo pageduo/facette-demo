@@ -3,25 +3,21 @@ export const company = {
   fullName: "FACETTE: Studio für Markendesign & Brand Identity",
   founded: 2017,
   city: "Berlin",
-  claim: "Jede Marke hat viele Seiten.",
-  claimSecondLine: "Wir gestalten sie alle.",
+  // Seriennummer im Seitenrand — ein Artefakt aus der Produktwelt, in die
+  // Oberfläche übersetzt.
+  serial: "FACETTE 1-STUDIO",
+  claim: "Eine Marke",
+  claimSecondLine: "Viele Facetten",
   subline:
-    "Ein Berliner Studio für Markenidentität, Verpackung und digitale Bühnen, für Unternehmen, die mehr sein wollen als ein Logo.",
-  usp:
-    "Keine Marke ist eindimensional. Wir gestalten jede Facette einzeln (Identität, Sprache, Verpackung, Raum, Bewegung) und halten sie im Wandel trotzdem zusammen.",
+    "Berliner Studio für Markenidentität. Wir legen jede Marke unter Studiolicht, bis die eine Kante sichtbar wird, die sie von allen anderen trennt.",
   phone: "+49 30 555 214 70",
   phoneHref: "tel:+493055521470",
   email: "hallo@facette-demo.de",
-  whatsappHref: "https://wa.me/493055521470",
-  address: {
-    street: "Torstraße 111",
-    zip: "10119",
-    city: "Berlin",
-  },
+  address: { street: "Torstraße 111", zip: "10119", city: "Berlin" },
   hours: [
-    { day: "Montag – Freitag", time: "9:00 – 18:00 Uhr" },
-    { day: "Samstag", time: "nach Vereinbarung" },
-    { day: "Sonntag", time: "geschlossen" },
+    { day: "Montag – Freitag", time: "9:00 – 18:00" },
+    { day: "Samstag", time: "Nach Vereinbarung" },
+    { day: "Sonntag", time: "Geschlossen" },
   ],
   social: [
     { label: "Instagram", href: "#" },
@@ -30,184 +26,219 @@ export const company = {
   ],
 };
 
-// Anchor-Sektionen der Ein-Seiten-Erfahrung. "number" speist die
-// Scroll-Fortschritts-/Sektionsnummerierung am Bildschirmrand.
-export const sections = [
-  { id: "hero", label: "Start", number: "00" },
-  { id: "arbeiten", label: "Arbeiten", number: "01" },
-  { id: "leistungen", label: "Leistungen", number: "02" },
-  { id: "prozess", label: "Prozess", number: "03" },
-  { id: "studio", label: "Studio", number: "04" },
-  { id: "kontakt", label: "Kontakt", number: "05" },
+// Vier Navigationspunkte, nicht mehr. Der Rest ist Scrollen.
+export const nav = [
+  { id: "intro", label: "Intro" },
+  { id: "facetten", label: "Facetten" },
+  { id: "archiv", label: "Archiv" },
+  { id: "kontakt", label: "Kontakt" },
 ] as const;
 
-export const stats = [
-  { value: 9, suffix: "", label: "Jahre Studio" },
-  { value: 140, suffix: "+", label: "Markenprojekte" },
-  { value: 98, suffix: "%", label: "Weiterempfehlung" },
-  { value: 12, suffix: "", label: "Köpfe im Team" },
+export const sections = [
+  { id: "intro", label: "Intro", number: "00" },
+  { id: "manifest", label: "Manifest", number: "01" },
+  { id: "facetten", label: "Facetten", number: "02" },
+  { id: "archiv", label: "Archiv", number: "03" },
+  { id: "verfahren", label: "Verfahren", number: "04" },
+  { id: "studio", label: "Studio", number: "05" },
+  { id: "kontakt", label: "Kontakt", number: "06" },
+] as const;
+
+// --- 01 Manifest -----------------------------------------------------------
+// Die Signatur-Sektion: Überschrift links, Objekt in der Mitte, Fließtext
+// rechts. Der einzige Ort mit gemischter Schreibweise.
+export const manifest = {
+  heading: ["Ist kein", "Logo."],
+  body:
+    "Ein Logo ist die eine Ansicht, die zufällig ganz oben liegt. Wir schleifen alle anderen mit: Sprache, Material, Bewegung, Raum. Erst wenn eine Marke aus jedem Winkel dieselbe bleibt, ist sie fertig.",
+  credit: "Studio Facette, Berlin",
+};
+
+export const overture = {
+  eyebrow: "Studio für Markenidentität, Berlin",
+  tagline: "Gebaut für Marken, die aus jedem Winkel halten",
+  note: "Sechs Facetten. Ein Kern. Jede einzeln geschliffen.",
+};
+
+// --- 02 Facetten (Leistungen) ---------------------------------------------
+// Jede Facette entspricht einer Fläche des Objekts in der Mitte. Beim
+// Fokussieren leuchtet die zugehörige Fläche auf.
+export const facets = [
+  {
+    index: "F/01",
+    title: "Strategie",
+    lead: "Die Kante finden",
+    description:
+      "Positionierung, Naming, Markenkern. Die unbequemen Fragen, bevor die erste Form entsteht.",
+  },
+  {
+    index: "F/02",
+    title: "Identität",
+    lead: "Die Form schleifen",
+    description:
+      "Zeichen, Farbe, Typografie. Ein System mit so wenigen Regeln, dass es jemand anderes weiterführen kann.",
+  },
+  {
+    index: "F/03",
+    title: "Verpackung",
+    lead: "Im Regal bestehen",
+    description:
+      "Struktur, Material, Veredelung. Der Moment, in dem eine Marke tatsächlich in einer Hand liegt.",
+  },
+  {
+    index: "F/04",
+    title: "Digital",
+    lead: "In Bewegung bleiben",
+    description:
+      "Websites, Social-Kits, Motion. Dieselbe Marke, jetzt mit Zeitachse und Cursor.",
+  },
+  {
+    index: "F/05",
+    title: "Editorial",
+    lead: "Auf Papier halten",
+    description:
+      "Kataloge, Reports, Bücher. Wo Gestaltung langsamer wird und jeder Umbruch zählt.",
+  },
+  {
+    index: "F/06",
+    title: "Raum",
+    lead: "Betretbar werden",
+    description:
+      "Ladenbau, Leitsystem, Messe. Die Facette, durch die Kundschaft körperlich hindurchgeht.",
+  },
 ];
 
+// --- 03 Archiv (Arbeiten) --------------------------------------------------
 export type WorkItem = {
   slug: string;
   brand: string;
-  category: string;
+  discipline: string;
   year: string;
+  heading: string;
   description: string;
-  color: string;
-  colorSoft: string;
+  material: string;
 };
 
-// Jedes Projekt trägt einen eigenen Akzentton — beim Hover/Fokus "verfärbt"
-// sich die gesamte Seite (Verlaufsflächen, Cursor, Progress-Leiste) in diese
-// Farbe. Das ist die visuelle Kernidee des Studios: eine Marke hat viele
-// Facetten, jede mit eigener Farbe, aber demselben Kern.
 export const work: WorkItem[] = [
   {
     slug: "nordkorn",
     brand: "Nordkorn",
-    category: "Bio-Bäckerei · Rebranding & Verpackung",
+    discipline: "Rebranding, Verpackung",
     year: "2025",
+    heading: "Ist kein Brot.",
     description:
-      "Vom Nischenbäcker zur Regalmarke: ein warmes, erdiges Identitätssystem für Sauerteigbrot mit Haltung.",
-    color: "#E8A33D",
-    colorSoft: "#f3c785",
+      "Eine Bäckerei, die seit vierzig Jahren dasselbe macht und es nie erzählt hat. Wir haben das Regal zum Erzähler gemacht: Papier, Prägung, ein Ton wie Roggenmehl.",
+    material: "Graspapier, Blindprägung",
   },
   {
     slug: "pulse-radio",
     brand: "Pulse Radio",
-    category: "Kultur & Musik · Identität & Bewegtbild",
+    discipline: "Identität, Bewegtbild",
     year: "2024",
+    heading: "Ist kein Sender.",
     description:
-      "Ein visuelles System, das sich im Takt bewegt, für einen Streaming-Sender zwischen Club und Feuilleton.",
-    color: "#FF3D7F",
-    colorSoft: "#ff8fb4",
+      "Ein Streaming-Kanal zwischen Club und Feuilleton. Das Zeichen liegt nie still, es folgt dem Takt der laufenden Sendung.",
+    material: "Generatives System, 12 Zustände",
   },
   {
     slug: "voltra",
     brand: "Voltra",
-    category: "E-Mobility · Markenidentität & Digital",
+    discipline: "Identität, Digital",
     year: "2025",
+    heading: "Ist keine Säule.",
     description:
-      "Elektrisch, aber nicht kalt: eine Tech-Marke, die Ladeinfrastruktur menschlich erzählt.",
-    color: "#2FD4E0",
-    colorSoft: "#8ff0f7",
+      "Ladeinfrastruktur wird meistens wie Technik gestaltet. Wir haben sie wie Gastfreundschaft gestaltet, angefangen beim Licht am Stellplatz.",
+    material: "Signaletik, Aluminium eloxiert",
   },
   {
     slug: "muse-cosmetics",
-    brand: "Muse Cosmetics",
-    category: "Beauty · Verpackung & Retail",
+    brand: "Muse",
+    discipline: "Verpackung, Retail",
     year: "2023",
+    heading: "Ist kein Tiegel.",
     description:
-      "Reduzierte Formen, ein Hauch Lila: Verpackungsdesign, das im Regal flüstert statt schreit.",
-    color: "#C79AFF",
-    colorSoft: "#e3d0ff",
+      "Im Kosmetikregal schreien alle. Muse flüstert: mattes Glas, ein einziger Prägestrich, sonst nichts. Der Rest ist Abstand.",
+    material: "Mattglas, Heißfolie",
   },
   {
     slug: "hafenkantine",
     brand: "Hafenkantine",
-    category: "Gastronomie · Identität & Signage",
+    discipline: "Identität, Signage",
     year: "2024",
+    heading: "Ist kein Lokal.",
     description:
-      "Terrakotta, Handschrift und Fernweh: eine Restaurantmarke mit Hafenluft für Innenstadtlage.",
-    color: "#D4592B",
-    colorSoft: "#f0a37e",
+      "Terrakotta, Handschrift, Fernweh. Eine Restaurantmarke, die nach Hafen riecht, obwohl sie in der Innenstadt steht.",
+    material: "Emailleschild, Handsatz",
   },
   {
     slug: "gruenwerk",
     brand: "Grünwerk",
-    category: "Urban Gardening · Markenidentität",
+    discipline: "Identität, System",
     year: "2022",
+    heading: "Ist kein Garten.",
     description:
-      "Ein Grün, das wächst statt greenwasht: Identität für ein Netzwerk urbaner Gemeinschaftsgärten.",
-    color: "#5FBE71",
-    colorSoft: "#a6e0b1",
+      "Ein Netzwerk aus vierzig Gemeinschaftsgärten, das aussehen wollte wie eines. Ein Grün, das wächst, statt zu behaupten.",
+    material: "Modularer Baukasten",
   },
 ];
 
-export const services = [
+// --- 04 Verfahren ----------------------------------------------------------
+export const procedure = [
   {
-    key: "strategie",
-    title: "Markenstrategie",
-    description:
-      "Positionierung, Naming und Markenkern: die Fragen, die vor jedem Formensuchen beantwortet sein müssen.",
-    size: "lg",
+    step: "01",
+    title: "Zerlegen",
+    description: "Workshops, Wettbewerb, Archiv. Wir nehmen die Marke auseinander, bevor wir etwas bauen.",
   },
   {
-    key: "identitaet",
-    title: "Identität & Design",
-    description: "Logo, Farbwelt, Typografie und ein System, das über Jahre trägt.",
-    size: "md",
-  },
-  {
-    key: "verpackung",
-    title: "Verpackung",
-    description: "Strukturdesign und Displaylösungen, die im Regal auffallen.",
-    size: "md",
-  },
-  {
-    key: "digital",
-    title: "Digitale Bühne",
-    description: "Websites, Social-Kits und Motion Design für alle digitalen Kanäle.",
-    size: "md",
-  },
-  {
-    key: "editorial",
-    title: "Editorial & Print",
-    description: "Kataloge, Reports und redaktionelle Gestaltung mit ruhiger Hand.",
-    size: "sm",
-  },
-  {
-    key: "raum",
-    title: "Raum & Signage",
-    description: "Ladenbau, Wayfinding und Messeauftritte, die Marke räumlich erlebbar machen.",
-    size: "sm",
-  },
-];
-
-export const process = [
-  {
-    number: "01",
-    title: "Entdecken",
-    description:
-      "Workshops, Wettbewerbsanalyse und viele unbequeme Fragen, bis der eigentliche Markenkern sichtbar wird.",
-  },
-  {
-    number: "02",
+    step: "02",
     title: "Entwerfen",
-    description:
-      "Moodboards und erste Formensprachen entstehen parallel in mehreren Richtungen, bewusst divers.",
+    description: "Drei Richtungen parallel, bewusst weit auseinander. Keine Variationen desselben Gedankens.",
   },
   {
-    number: "03",
-    title: "Verdichten",
-    description:
-      "Feedback-Runden schärfen die Richtung, bis ein einziges, konsistentes System übrig bleibt.",
+    step: "03",
+    title: "Schleifen",
+    description: "Eine Richtung bleibt. Sie wird so lange verdichtet, bis nichts Beliebiges mehr übrig ist.",
   },
   {
-    number: "04",
+    step: "04",
     title: "Ausrollen",
-    description:
-      "Guidelines, Vorlagen und Rollout über alle Touchpoints, vom Briefpapier bis zur Ladenfront.",
+    description: "Guidelines, Vorlagen, Übergabe. Vom Briefbogen bis zur Ladenfront, alles an einem Tag anwendbar.",
   },
   {
-    number: "05",
-    title: "Weiterdenken",
-    description:
-      "Marken leben. Wir begleiten Weiterentwicklung, neue Formate und Relaunches auch danach.",
+    step: "05",
+    title: "Nachziehen",
+    description: "Marken bewegen sich. Wir bleiben, wenn neue Formate, Märkte oder Relaunches anstehen.",
   },
 ];
+
+// --- 05 Studio -------------------------------------------------------------
+export const stats = [
+  { value: 9, suffix: "", label: "Jahre Studio" },
+  { value: 140, suffix: "+", label: "Markenprojekte" },
+  { value: 98, suffix: "%", label: "Weiterempfehlung" },
+  { value: 12, suffix: "", label: "Köpfe" },
+];
+
+export const studio = {
+  heading: ["Zwölf Leute,", "ein Tisch."],
+  body:
+    "Kein Account-Layer, keine Weiterreichung. Wer den Entwurf macht, sitzt auch im Termin. Das begrenzt, wie viele Projekte gleichzeitig laufen können, und genau das ist beabsichtigt.",
+  credits: [
+    { role: "Gegründet", value: "2017, Berlin-Mitte" },
+    { role: "Team", value: "12 Gestaltende, 2 Strateginnen" },
+    { role: "Kapazität", value: "4 Projekte gleichzeitig" },
+    { role: "Sprachen", value: "Deutsch, Englisch" },
+  ],
+};
 
 export const testimonials = [
   {
-    quote:
-      "FACETTE hat aus einem vagen Bauchgefühl eine Marke gemacht, die wir sofort wiedererkennen, und unsere Kund:innen auch.",
+    quote: "Aus einem vagen Bauchgefühl wurde eine Marke, die wir sofort wiedererkennen. Unsere Kundschaft auch.",
     author: "Mareike Sondermann",
     role: "Gründerin, Nordkorn",
   },
   {
-    quote:
-      "Kein Studio hat uns vorher so genau zugehört, bevor der erste Entwurf entstand. Das Ergebnis merkt man.",
+    quote: "Kein Studio hat uns vorher so lange zugehört, bevor der erste Entwurf kam. Das sieht man dem Ergebnis an.",
     author: "Jonas Reetz",
     role: "Head of Brand, Voltra",
   },
@@ -218,27 +249,12 @@ export const testimonials = [
   },
 ];
 
-export const faq = [
-  {
-    question: "Wie läuft ein Projekt bei euch ab?",
-    answer:
-      "In fünf Phasen von Entdecken bis Weiterdenken, siehe unser Prozess weiter oben. Am Anfang steht immer ein unverbindliches Kennenlerngespräch.",
-  },
-  {
-    question: "Arbeitet ihr auch mit Startups oder kleineren Marken?",
-    answer:
-      "Ja. Neben etablierten Unternehmen begleiten wir bewusst auch junge Marken früh, oft entstehen daraus die mutigsten Projekte.",
-  },
-  {
-    question: "Was kostet ein Rebranding bei FACETTE?",
-    answer:
-      "Das hängt vom Umfang ab, von der reinen Identität bis zum vollständigen System inklusive Verpackung und Raum. Nach dem Erstgespräch erhalten Sie ein individuelles Angebot.",
-  },
-  {
-    question: "Wie lange dauert ein typisches Projekt?",
-    answer:
-      "Kleinere Identitätsprojekte etwa 6–8 Wochen, umfassende Markensysteme mit Verpackung und Rollout 3–5 Monate.",
-  },
-];
+// --- 06 Kontakt ------------------------------------------------------------
+export const contact = {
+  heading: ["Legen Sie", "Ihre Marke", "unter Licht."],
+  body:
+    "Ein Gespräch, vierzig Minuten, ohne Rechnung. Danach wissen Sie, ob wir die Richtigen sind, und wir, ob wir Ihnen etwas zu sagen haben.",
+  budgets: ["Bis 15 T€", "15 – 40 T€", "40 – 90 T€", "Offen"],
+};
 
-export const defaultAccent = "#7C5CFF";
+export const legalNote = "* Demo-Website. Facette ist kein reales Unternehmen.";

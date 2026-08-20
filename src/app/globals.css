@@ -1,172 +1,270 @@
 @import "tailwindcss";
 
-:root {
-  --color-ink: #0b0a08;
-  --color-void: #050505;
-  --color-graphite: #171310;
-  --color-graphite-light: #241e17;
-  --color-paper: #f6f1e7;
-  --color-cream: #efe7d6;
-  --color-stone: #8f8676;
+/* ============================================================================
+   FACETTE — Darkroom-Editorial
+   Ein einziges Objekt im warmen Dunkeln, Creme-Versalien als einzige Dekoration.
+   Token-Quelle: Refero-Extraktion (ORYZO AI). Abweichungen sind unten vermerkt.
+   ========================================================================== */
 
-  --color-accent: #7c5cff;
-  --color-accent-soft: #b9a8ff;
-  --color-accent-dark: #4a35c4;
+@theme {
+  /* --- Farben (1:1 aus theme.css) --- */
+  --color-warm-cream: #ffedd7;
+  --color-walnut-shadow: #100904;
+  --color-bark-brown: #382416;
+  --color-cork-border: #40372e;
+  --color-driftwood: #6c5f51;
+  --color-ember-accent: #dc5000;
 
-  /* Wird per JS auf --live-accent gesetzt (Hover auf Arbeiten-Karten) und von
-     Verlaufsflächen, Cursor, Fortschrittsanzeige etc. referenziert. */
-  --live-accent: var(--color-accent);
-  --live-accent-soft: var(--color-accent-soft);
+  /* Ergänzung: Die Schneidematte aus der Referenz-Fotografie. Laut DESIGN.md
+     ausdrücklich ein Hero-Element, kein UI-Token — nur die Intro-Sektion. */
+  --color-cutting-mat: #445231;
+
+  /* --- Typografie ---
+     Halyard Display Variable ist Adobe-lizenziert. DESIGN.md nennt Inter als
+     strukturellen Ersatz; Inter bringt auch das geforderte ss01 mit. */
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-legal: Arial, ui-sans-serif, system-ui, sans-serif;
+
+  /* --- Radien (das komplette Vokabular, mehr gibt es nicht) --- */
+  --radius-cards: 12px;
+  --radius-buttons-outlined: 22.5px;
+  --radius-buttons-pill: 36px;
 }
 
-@theme inline {
-  --color-ink: var(--color-ink);
-  --color-void: var(--color-void);
-  --color-graphite: var(--color-graphite);
-  --color-graphite-light: var(--color-graphite-light);
-  --color-paper: var(--color-paper);
-  --color-cream: var(--color-cream);
-  --color-stone: var(--color-stone);
-  --color-accent: var(--color-accent);
-  --color-accent-soft: var(--color-accent-soft);
-  --color-accent-dark: var(--color-accent-dark);
+/* ---------------------------------------------------------------------------
+   Fluide Skalierung. Die Extraktion liefert feste px-Werte für ~1440px Breite.
+   Damit die Sektionen auch auf 390px und 2560px als eine Aussage funktionieren,
+   werden Anzeigegrößen fluid interpoliert; der Extraktionswert ist jeweils der
+   Ankerpunkt bei ~1440px.
+   ------------------------------------------------------------------------- */
+:root {
+  --step-label: clamp(10px, 0.18rem + 0.55vw, 12px);
+  --step-caption: clamp(11px, 0.2rem + 0.62vw, 14px);
+  --step-subheading: clamp(14px, 0.3rem + 0.8vw, 18px);
+  --step-heading-sm: clamp(17px, 0.4rem + 1vw, 24px);
+  --step-body: clamp(19px, 0.5rem + 1.3vw, 29px);
+  --step-heading: clamp(28px, 0.6rem + 2.4vw, 41px);
+  --step-display: clamp(34px, 0.7rem + 3vw, 51px);
+  /* Erweiterung über die Extraktion hinaus: das Wortzeichen im Intro ist der
+     eine Moment, an dem Typografie selbst zum Objekt wird. */
+  --step-mega: clamp(52px, 1rem + 13vw, 230px);
 
-  --font-display: var(--font-fraunces);
-  --font-label: var(--font-space-grotesk);
-  --font-body: var(--font-inter);
+  --gutter: clamp(18px, 4vw, 68px);
 }
 
 html {
-  scroll-behavior: auto;
+  background: var(--color-walnut-shadow);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--color-ink);
-  color: var(--color-paper);
-  font-family: var(--font-body), system-ui, sans-serif;
-  cursor: none;
+  background: var(--color-walnut-shadow);
+  color: var(--color-warm-cream);
+  font-family: var(--font-display);
+  font-feature-settings: "ss01" on;
+  overflow-x: hidden;
 }
 
-@media (pointer: coarse) {
-  body {
-    cursor: auto;
-  }
-}
+/* Zwei typografische Modi, mehr kennt das System nicht. */
 
-h1, h2, h3, h4, .font-display {
-  font-family: var(--font-display), Georgia, serif;
-  font-weight: 460;
-}
-
-.font-display-italic {
-  font-family: var(--font-display), Georgia, serif;
-  font-style: italic;
-  font-weight: 460;
-}
-
-.font-label {
-  font-family: var(--font-label), system-ui, sans-serif;
-}
-
-::selection {
-  background: var(--live-accent);
-  color: var(--color-ink);
-}
-
-.eyebrow {
-  font-family: var(--font-label), system-ui, sans-serif;
-  letter-spacing: 0.24em;
+/* 1. VERSALIEN, GEWICHT 500 — der Standard für alles. */
+.t-display,
+.t-heading,
+.t-heading-sm,
+.t-subheading,
+.t-caption,
+.t-label,
+.t-micro {
+  font-weight: 500;
   text-transform: uppercase;
-  font-size: 0.72rem;
-  font-weight: 600;
+  letter-spacing: normal;
 }
 
-.text-live-accent {
-  color: var(--live-accent);
+.t-display    { font-size: var(--step-display);    line-height: 0.9; }
+.t-heading    { font-size: var(--step-heading);    line-height: 0.9; }
+.t-heading-sm { font-size: var(--step-heading-sm); line-height: 1.09; }
+.t-subheading { font-size: var(--step-subheading); line-height: 1; }
+.t-caption    { font-size: var(--step-caption);    line-height: 1.2; }
+.t-label      { font-size: var(--step-label);      line-height: 1.1; }
+.t-micro      { font-size: 10px;                   line-height: 1.2; }
+
+.t-mega {
+  font-size: var(--step-mega);
+  line-height: 0.82;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
-.bg-live-accent {
-  background-color: var(--live-accent);
+/* 2. GEMISCHT, GEWICHT 400 — die einzige Ausnahme: erklärender Fließtext. */
+.t-body {
+  font-size: var(--step-body);
+  line-height: 1.26;
+  font-weight: 400;
+  text-transform: none;
 }
 
-.border-live-accent {
-  border-color: var(--live-accent);
+/* Bewusste Abweichung vom Zwei-Modi-System: Impressum und Datenschutz sind
+   lange Pflichttexte mit Adressen, Paragrafen und E-Mail-Adressen. In
+   Versalien wären sie kaum lesbar, für den 29px-Body sind sie zu lang.
+   Deshalb hier gemischte Schreibweise auf Fließtextgröße. */
+.t-prose {
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 400;
+  text-transform: none;
 }
 
-/* ---------- Marquee ---------- */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+/* Systemgerenderte Mikro-Rechtstexte. Andere Schrift als Signal: das ist
+   keine Gestaltung, das ist Pflichtangabe. */
+.t-legal {
+  font-family: var(--font-legal);
+  font-size: 8px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: uppercase;
 }
 
-.animate-marquee {
-  animation: marquee 26s linear infinite;
+/* --- Trenner: 1px, gestrichelt, nie dicker --- */
+.rule-dashed      { border: 0; border-top: 1px dashed var(--color-cork-border); }
+.rule-dashed-soft { border: 0; border-top: 1px dashed var(--color-driftwood); }
+
+/* --- Buttons: das gesamte Vokabular --- */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--radius-buttons-pill);
+  background: var(--color-bark-brown);
+  color: var(--color-warm-cream);
+  padding: 14px 24px;
+  font-size: var(--step-caption);
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-pill:hover { background: #4a3020; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--radius-buttons-outlined);
+  background: transparent;
+  border: 1px solid var(--color-warm-cream);
+  color: var(--color-warm-cream);
+  padding: 7.5px 18px;
+  font-size: var(--step-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+.btn-ghost:hover {
+  background: var(--color-warm-cream);
+  color: var(--color-walnut-shadow);
 }
 
-/* ---------- Floating ambient blobs ---------- */
-@keyframes float-a {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(4%, -6%) scale(1.08); }
-  66% { transform: translate(-5%, 4%) scale(0.95); }
-}
-
-@keyframes float-b {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-6%, 5%) scale(1.1); }
-}
-
-.animate-float-a {
-  animation: float-a 18s ease-in-out infinite;
-}
-
-.animate-float-b {
-  animation: float-b 22s ease-in-out infinite;
-}
-
-/* ---------- Grain overlay ---------- */
-.grain-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 45;
-  pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-}
-
-/* ---------- Animated underline ---------- */
-.link-underline {
+/* --- Unterstrichener Textlink: die Standard-Interaktion --- */
+.link-rule {
   position: relative;
-  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
 }
-
-.link-underline::after {
+.link-rule::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: -4px;
   width: 100%;
   height: 1px;
   background: currentColor;
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
 }
-
-.link-underline:hover::after {
+.link-rule:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+/* Aktiver Navigationspunkt trägt einen gestrichelten Indikator. */
+.nav-active {
+  border-bottom: 1px dashed var(--color-warm-cream);
+  padding-bottom: 3px;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--color-ink);
+/* --- Feld: nur Grundlinie, kein Kasten --- */
+.field-rule {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--color-warm-cream);
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-warm-cream);
+  padding: 1px 36px 10px 2px;
+  font-size: var(--step-subheading);
+  font-weight: 500;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color 0.4s ease;
+}
+.field-rule::placeholder { color: var(--color-driftwood); text-transform: uppercase; }
+.field-rule:focus { border-color: var(--color-ember-accent); }
+textarea.field-rule { text-transform: none; font-weight: 400; }
+
+::selection { background: var(--color-ember-accent); color: var(--color-warm-cream); }
+
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--color-walnut-shadow); }
+::-webkit-scrollbar-thumb { background: var(--color-bark-brown); }
+
+/* --- Filmkorn: hält die großen Flächen vor dem Banding --- */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.055;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-graphite-light);
-  border-radius: 999px;
+/* --- Konstruktionszeichnung: Pfade zeichnen sich selbst --- */
+@keyframes draw-path { to { stroke-dashoffset: 0; } }
+.draw {
+  stroke-dasharray: var(--len, 1200);
+  stroke-dashoffset: var(--len, 1200);
+  animation: draw-path 2.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes handle-in {
+  from { opacity: 0; transform: scale(0.4); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.handle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: handle-in 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.spin-slow { transform-origin: center; animation: spin-slow 90s linear infinite; }
+
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -14px, 0); }
+}
+.drift { animation: drift 9s ease-in-out infinite; }
+
+/* Warmes Streiflicht von oben rechts, wie in der Referenz-Ausleuchtung. */
+.rim-light {
+  background:
+    radial-gradient(58% 46% at 68% 22%, rgba(255, 237, 215, 0.09), transparent 62%),
+    radial-gradient(46% 40% at 30% 78%, rgba(220, 80, 0, 0.06), transparent 68%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .draw { animation: none; stroke-dashoffset: 0; }
+  .handle { animation: none; opacity: 1; }
+  .spin-slow, .drift { animation: none; }
 }

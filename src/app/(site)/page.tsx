@@ -1,19 +1,21 @@
-import Hero from "@/components/Hero";
-import WorkSection from "@/components/WorkSection";
-import ServicesBento from "@/components/ServicesBento";
-import ProcessScrolly from "@/components/ProcessScrolly";
-import StudioSection from "@/components/StudioSection";
-import KontaktSection from "@/components/KontaktSection";
+import Intro from "@/components/Intro";
+import Manifest from "@/components/Manifest";
+import Facets from "@/components/Facets";
+import Archive from "@/components/Archive";
+import Procedure from "@/components/Procedure";
+import Studio from "@/components/Studio";
+import Contact from "@/components/Contact";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <WorkSection />
-      <ServicesBento />
-      <ProcessScrolly />
-      <StudioSection />
-      <KontaktSection />
+      <Intro />
+      <Manifest />
+      <Facets />
+      <Archive />
+      <Procedure />
+      <Studio />
+      <Contact />
     </>
   );
 }

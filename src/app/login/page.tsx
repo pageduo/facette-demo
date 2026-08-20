@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { company } from "@/lib/content";
+import FacetteMark from "@/components/FacetteMark";
 
 export const metadata: Metadata = {
   title: `Anmeldung: ${company.fullName} (Demo)`,
@@ -19,33 +20,35 @@ export default async function LoginPage({
   searchParams: Promise<{ error?: string; redirectTo?: string }>;
 }) {
   const { error, redirectTo } = await searchParams;
-  const message = error ? errorMessages[error] ?? "Anmeldung fehlgeschlagen." : null;
+  const message = error ? (errorMessages[error] ?? "Anmeldung fehlgeschlagen.") : null;
 
   const startUrl = `/api/auth/google/start${
     redirectTo ? `?redirectTo=${encodeURIComponent(redirectTo)}` : ""
   }`;
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-ink px-5">
-      <div className="w-full max-w-sm rounded-3xl bg-graphite p-8 text-center sm:p-10">
-        <p className="font-label text-2xl font-semibold text-paper">
-          {company.name}
-          <span className="text-accent">.</span>
-        </p>
-        <h1 className="font-display mt-6 text-xl font-medium text-paper">Geschützter Bereich</h1>
-        <p className="mt-3 text-sm leading-relaxed text-paper/60">
-          Diese Demo-Website ist nicht öffentlich. Bitte melde dich mit einem freigeschalteten
-          Google-Konto an.
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-walnut-shadow px-5">
+      <div aria-hidden className="rim-light absolute inset-0" />
+      <FacetteMark
+        drawn={false}
+        className="pointer-events-none absolute aspect-square w-[min(90vw,620px)] opacity-30"
+      />
+
+      <div className="relative w-full max-w-sm rounded-[var(--radius-cards)] border border-cork-border bg-walnut-shadow/70 p-8 text-center backdrop-blur-sm sm:p-10">
+        <p className="t-heading-sm tracking-[0.14em]">{company.name}</p>
+        <hr className="rule-dashed my-6" />
+        <h1 className="t-subheading">Geschützter Bereich</h1>
+        <p className="mt-4 t-caption text-warm-cream/60">
+          Diese Demo ist nicht öffentlich. Bitte mit einem freigeschalteten Google-Konto anmelden.
         </p>
 
         {message && (
-          <p className="mt-5 rounded-xl bg-ink/60 px-4 py-3 text-sm text-accent-soft">{message}</p>
+          <p className="mt-5 rounded-[var(--radius-cards)] border border-ember-accent/40 px-4 py-3 t-caption text-ember-accent">
+            {message}
+          </p>
         )}
 
-        <a
-          href={startUrl}
-          className="mt-8 flex items-center justify-center gap-3 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-ink transition hover:opacity-90"
-        >
+        <a href={startUrl} className="btn-pill mt-8 w-full justify-center">
           <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden>
             <path
               fill="#4285F4"
@@ -67,7 +70,7 @@ export default async function LoginPage({
           Mit Google anmelden
         </a>
 
-        <p className="mt-6 text-xs text-paper/40">Demo-Vorlage, kein echtes Unternehmen.</p>
+        <p className="mt-6 t-legal text-driftwood">Demo-Vorlage, kein echtes Unternehmen.</p>
       </div>
     </div>
   );

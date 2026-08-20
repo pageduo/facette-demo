@@ -29,26 +29,18 @@ export default function CookieBanner() {
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-[90] px-4 pb-4 sm:px-6">
-      <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-2xl border border-paper/10 bg-graphite/95 p-5 shadow-2xl backdrop-blur sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm leading-relaxed text-paper/70">
-          Diese Demo-Website verwendet nur technisch notwendige Cookies. Für die Kartenanzeige
-          (Google Maps) fragen wir separat Ihre Zustimmung ab.{" "}
-          <Link href="/datenschutz" className="underline underline-offset-2 hover:text-paper">
-            Datenschutzerklärung
+      <div className="mx-auto flex max-w-3xl flex-col gap-5 rounded-[var(--radius-cards)] border border-cork-border bg-walnut-shadow/95 p-6 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+        <p className="t-caption max-w-[52ch] text-warm-cream/75">
+          Diese Demo verwendet nur technisch notwendige Cookies.{" "}
+          <Link href="/datenschutz" className="link-rule">
+            Datenschutz
           </Link>
-          .
         </p>
         <div className="flex shrink-0 gap-3">
-          <button
-            onClick={() => decide("declined")}
-            className="rounded-full border border-paper/20 px-4 py-2 text-sm font-medium text-paper transition hover:bg-paper/10"
-          >
+          <button onClick={() => decide("declined")} className="btn-ghost">
             Ablehnen
           </button>
-          <button
-            onClick={() => decide("accepted")}
-            className="rounded-full bg-live-accent px-4 py-2 text-sm font-medium text-ink transition hover:opacity-90"
-          >
+          <button onClick={() => decide("accepted")} className="btn-ghost">
             Akzeptieren
           </button>
         </div>
